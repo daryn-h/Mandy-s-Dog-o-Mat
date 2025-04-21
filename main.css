@@ -1,10 +1,18 @@
 /* home*/
 
 body{
-   font-family:monospace;
+   /* font-family:monospace; */
+   /* Monospace fonts are ok for displaying code but aren't great for the main readable content. I added a popular Google font instead. */
+   font-family: "Roboto", sans-serif;
    line-height: 1.5;
    color: black;
-   background: radial-gradient(red, white);
+
+   background: 
+   radial-gradient(rgba(255, 192, 203, 0.5), rgba(255, 255, 255, 0.9)),
+      url(images/bkg-body.png);
+   background-repeat: repeat;
+   background-size: auto;
+   background-position: top left;
 }
 
 .wrapper{
@@ -12,15 +20,26 @@ body{
    margin: auto;
    padding: 30px;
    background-color: white;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.297);
+   border-radius: 1rem;
 }
-
+/* This is a SEO trick to have your site's name be read as <h1> text but still have the graphic logo appear */
 header{
    text-align: center;
+   background-image: url(images/mandyslogo.png);
+   height: 150px;
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-position: center;
+}
+/* This is a SEO trick to have your site's name be read as <h1> text but still have the graphic logo appear */
+header h1 {
+  text-indent: -9999px;
 }
 
 .mandyslogo{
-   max-width: 300px;
-   height: auto;
+   /* max-width: 300px;
+   height: auto; */
 }
 
 nav{
@@ -44,13 +63,14 @@ nav a{
    display: block;
    padding: 10px;
    text-decoration: none;
-   color: red;
+   color: #e03b49; /* this is the red from the Mandys logo */
    transition: 0.3s;
    font-size: 20px;
+   border-bottom: solid 3px white; /* Adding a border in the normal state will prevent it from jumping when one is added on the hover */
 }
 
 nav a:hover{
-   border-bottom: solid 3px red ;
+   border-bottom: solid 3px #e03b49;
 }
 
 
@@ -68,62 +88,82 @@ nav a:hover{
   width: 100%;
   max-width: 800px;
   height: auto;
-  
-}
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
 
 .hero-tagline{
    font-size: 25px;
-   font-style: italic;
+   /* font-style: italic; */
    color: black;
    font-family:serif;
-   padding: 20px;
-   
-
-   
+   /* Padding was pushing it away from the image */
+   /* padding: 20px; */
 }
 
 .why-us{
-   margin: 10px;
+   margin: 2rem 0;
+   padding: 1rem;
    text-align: center;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.297);
+   border-radius: 1rem;
+   border: 1px solid rgb(244, 244, 244);
+   color: #e03b49; /* This is the red from the Mandy's logo */
+   font-weight: bold;
 }
 
 .why-us h3{
-   font-size: 25px;
+   font-size: 250%;
    font-family: monospace;
-   padding: 15px;
-   color: red;
+   font-family: "Solitreo", cursive;
+   grid-column: 1/5;
 }
 
-.reasons{
+.reason-box {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr 1fr;
-   justify-content: center;
-   box-shadow: 0 2px 5px lightgray;
-   border-radius: 10px;
-   padding: 30px;
+   gap: 2rem;
+   justify-content: space-around;
 }
 
-.reason{
+.reason {
    font-size: 20px;
-   border-radius: 15px;
-   width: 100%;
    max-width: 200px;
-   text-align:center;
-   padding: 30px;
-   width: 80%;
-   height: auto;
-   
-
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-end;
+   max-height: 250px;
  }
 
  .reason img{
    margin-bottom: 10px;
-   width: 80%;
-   height: auto;
-   
+   max-width: 100%;
+   max-height: 100px;
  }
+
+ .reason img:hover {
+
+}
 
  footer{
    text-align: center;
+ }
 
+ main {
+  padding: 1rem 2rem;
+  font-size: 125%;
+ }
+
+
+ main h2 {
+  font-family: "Solitreo", cursive;
+  color: #e03b49;
+  font-size: 175%;
+  margin-top: 1rem;
+  /* border-bottom: 1px solid #e03b49; */
+ }
+
+ main li {
+  margin: 0 0 .75rem 1.5rem;
  }
